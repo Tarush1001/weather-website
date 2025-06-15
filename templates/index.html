@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Weather App</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+  <!-- Creator Tag -->
+  <div class="creator-tag">Created by Tarush Saxena</div>
+
+  <!-- Main Container -->
   <div class="container">
     <h1>Weather App</h1>
     <form method="POST">
@@ -19,10 +26,11 @@
         <div class="weather-box">
           <h2>{{ weather.city }}</h2>
           <p>{{ weather.temperature }}°C, {{ weather.description }}</p>
-          <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png">
+          <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather icon">
         </div>
       {% endif %}
     {% endif %}
   </div>
+
 </body>
 </html>
